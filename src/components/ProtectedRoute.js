@@ -3,28 +3,28 @@ import { useNavigate } from 'react-router-dom'
 
 const ProtectedRoute = ({ children }) => {
   const navigate = useNavigate()
-  const [isLoading, setIsLoading] = useState(true) 
-  const [isAuthenticated, setIsAuthenticated] = useState(false) 
+  const [isLoading, setIsLoading] = useState(true)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
 
   useEffect(() => {
-    const token = localStorage.getItem('jwt') // Get token from localStorage
+    const token = localStorage.getItem('jwt')
     if (!token) {
-      navigate('/graphql2') // Redirect to login if no token
+      navigate('/graphql2')
     } else {
-      setIsAuthenticated(true) // Set authentication state if token exists
+      setIsAuthenticated(true)
     }
-    setIsLoading(false) // Stop loading once token check is done
+    setIsLoading(false)
   }, [navigate])
 
   if (isLoading) {
-    return <div>Loading...</div> // Show a loading message while checking the token
+    return <div>Loading...</div>
   }
 
   if (!isAuthenticated) {
-    return null // Do not render anything if not authenticated (redirect will happen)
+    return null
   }
 
-  return children // Render the children (Dashboard) if authenticated
+  return children
 }
 
 export default ProtectedRoute

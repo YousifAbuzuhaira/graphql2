@@ -34,7 +34,7 @@ export function Login () {
       const jwt = await response.json()
       localStorage.setItem('jwt', jwt)
       setErrorMessage('')
-      navigate('/dashboard')
+      navigate('/graphql2/dashboard/')
     } catch (error) {
       setErrorMessage(error.message)
     }

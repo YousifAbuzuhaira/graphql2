@@ -7,15 +7,14 @@ import { ErrorPage } from './components/ErrorPage'
 import ProtectedRoute from './components/ProtectedRoute'
 
 function App () {
-  console.log('CHECK: ', localStorage.getItem('jwt')) // Check for JWT token
+  console.log('CHECK: ', localStorage.getItem('jwt')) 
   return (
     <div id='motherContainer'>
       <Router>
         <Routes>
-          <Route path='/graphql2' element={<Login />} />
-          {/* Protected route for Dashboard */}
+          <Route path='/graphql2/' element={<Login />} />
           <Route
-            path='/dashboard'
+            path='/graphql2/dashboard/'
             element={
               <ProtectedRoute>
                 <Dashboard />
