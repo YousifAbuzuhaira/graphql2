@@ -9,7 +9,7 @@ const ProtectedRoute = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem('jwt') // Get token from localStorage
     if (!token) {
-      navigate('/') // Redirect to login if no token
+      navigate('/graphql2') // Redirect to login if no token
     } else {
       setIsAuthenticated(true) // Set authentication state if token exists
     }

@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom'
 export function Dashboard () {
   const navigate = useNavigate()
   if (localStorage.getItem('jwt') === '') {
-    navigate('')
+    navigate('graphql2/')
   }
 
   const [user, userSet] = useState('')

@@ -15,7 +15,7 @@ function UserInfo ({
   // Logout function
   const handleLogout = () => {
     localStorage.removeItem('jwt')
-    navigate('/')
+    navigate('/graphql2')
   }
 
   return (

@@ -12,7 +12,7 @@ function App () {
     <div id='motherContainer'>
       <Router>
         <Routes>
-          <Route path='/' element={<Login />} />
+          <Route path='/graphql2' element={<Login />} />
           {/* Protected route for Dashboard */}
           <Route
             path='/dashboard'
