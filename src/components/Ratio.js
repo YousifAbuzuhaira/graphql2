@@ -39,9 +39,9 @@ function Ratio () {
 
   return (
     <>
-      <div class='audit-container'>
+      <div className='audit-container'>
         <div id='audit-box'>
-          <div class='ratio' id='ratioUp'></div>
+          <div className='ratio' id='ratioUp'></div>
         </div>
         <p>
           &nbsp;Done{' '}
@@ -51,9 +51,9 @@ function Ratio () {
         </p>
       </div>
       <br />
-      <div class='audit-container'>
+      <div className='audit-container'>
         <div id='audit-box'>
-          <div class='ratio' id='ratioDown'></div>
+          <div className='ratio' id='ratioDown'></div>
         </div>
         <p>
           &nbsp;Recieved{' '}

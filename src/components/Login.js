@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export function Login () {
@@ -8,6 +8,12 @@ export function Login () {
   const navigate = useNavigate()
 
   const API_SIGNIN_URL = 'https://learn.reboot01.com/api/auth/signin'
+
+  useEffect(() => {
+    if (localStorage.getItem('jwt') !== '') {
+      localStorage.removeItem('jwt')
+    }
+  })
 
   const handleLogin = async e => {
     e.preventDefault()
@@ -39,11 +45,11 @@ export function Login () {
       <h1>Login</h1>
       <br />
       <form onSubmit={handleLogin}>
-        <label class='inputs'>
+        <label className='inputs'>
           Username or Email:&nbsp;
           <br />
           <input
-            class='inputBox'
+            className='inputBox'
             type='text'
             value={identifier}
             onChange={e => setIdentifier(e.target.value)}
@@ -52,11 +58,11 @@ export function Login () {
         </label>
         <br />
         <br />
-        <label class='inputs'>
+        <label className='inputs'>
           Password:&nbsp;
           <br />
           <input
-            class='inputBox'
+            className='inputBox'
             type='password'
             value={password}
             onChange={e => setPassword(e.target.value)}

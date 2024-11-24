@@ -1,3 +1,6 @@
+import React from 'react'
+import { useNavigate } from 'react-router-dom' // Import useNavigate for redirecting after logout
+
 function UserInfo ({
   auditRatio,
   auditsAssigned,
@@ -7,6 +10,14 @@ function UserInfo ({
   login,
   XP
 }) {
+  const navigate = useNavigate() // Hook to programmatically navigate to a different route
+
+  // Logout function
+  const handleLogout = () => {
+    localStorage.removeItem('jwt')
+    navigate('/')
+  }
+
   return (
     <>
       <div id='top-item'>
@@ -29,16 +40,17 @@ function UserInfo ({
           <p className='userInfo infoTitle'>Audits Assigned:&nbsp;</p>
           <p className='userInfo'>{auditsAssigned}</p>
         </div>
-        <br></br>
-        <br></br>
-        <br></br>
+        <br />
+       
         <div>
           <h1 className='xp infoTitle'>XP:&nbsp;</h1>
           <h1 className='xp'>
             {XP / 1000 > 1000 ? `${XP / 1000000} MB` : `${XP / 1000} KB`}
           </h1>
         </div>
-        {/* <h1 >Total XP: {XP/1000 > 1000? `${XP/1000000} MB`: `${XP/1000} KB`}</h1> */}
+        <button className='logout-btn' onClick={handleLogout}>
+          Logout
+        </button>
       </div>
     </>
   )

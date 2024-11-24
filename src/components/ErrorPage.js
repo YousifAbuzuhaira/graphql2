@@ -1,0 +1,11 @@
+import React from 'react'
+
+export const ErrorPage = () => {
+  localStorage.removeItem('jwt')
+  return (
+    <div>
+      <h1>404 - Page Not Found</h1>
+      <p>The page you're looking for doesn't exist.</p>
+    </div>
+  )
+}

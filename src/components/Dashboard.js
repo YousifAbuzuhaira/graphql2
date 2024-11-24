@@ -5,8 +5,14 @@ import ProjectPieChart from './PieChart'
 import Ratio from './Ratio'
 import UserInfo from './UserInfo'
 import TopFlex from './TopFlex'
+import { useNavigate } from 'react-router-dom'
 
 export function Dashboard () {
+  const navigate = useNavigate()
+  if (localStorage.getItem('jwt') === '') {
+    navigate('')
+  }
+
   const [user, userSet] = useState('')
   useEffect(() => {
     async function getData () {
@@ -40,6 +46,13 @@ export function Dashboard () {
             <h1>Audit Ratio:</h1>
             <br></br>
             <h1>{parseFloat(user[0]).toFixed(3)}</h1>
+            <p>
+              {user[0] <= 0.5
+                ? 'Careful Buddy'
+                : user[0] < 1
+                ? 'Not Bad'
+                : 'Looking Good!'}
+            </p>
             <Ratio></Ratio>
           </div>
         </div>

@@ -65,7 +65,7 @@ body {
 
 .ratio {
   height: 100%;
-  background-color: black;
+  background-color: #798645;
 }
 
 .audit-container {
@@ -137,4 +137,12 @@ html {
   height: 40px;
   background-color: #e1dcc2;
   border-color: #e1dcc2;
+}
+
+.logout-btn {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 20px;
+  height: 30px;
+  width: 90%;
+  background-color: #e1dcc2;
 }
