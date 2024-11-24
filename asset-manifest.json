@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/graphql2/static/css/main.eeca652b.css",
-    "main.js": "/graphql2/static/js/main.d0f77289.js",
+    "main.js": "/graphql2/static/js/main.04a4f6bb.js",
     "index.html": "/graphql2/index.html",
     "main.eeca652b.css.map": "/graphql2/static/css/main.eeca652b.css.map",
-    "main.d0f77289.js.map": "/graphql2/static/js/main.d0f77289.js.map"
+    "main.04a4f6bb.js.map": "/graphql2/static/js/main.04a4f6bb.js.map"
   },
   "entrypoints": [
     "static/css/main.eeca652b.css",
-    "static/js/main.d0f77289.js"
+    "static/js/main.04a4f6bb.js"
   ]
 }
